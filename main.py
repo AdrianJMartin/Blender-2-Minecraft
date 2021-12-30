@@ -71,12 +71,23 @@ for z in range(0, RANGE_LIMIT):
             intersection_bmesh = mc_bvhtree.overlap(target_bvhtree)
 
             if intersection_bmesh:
+                
+                # count the number of uniqure cube verts intersecting
+                v = {}
+                for i in intersection_bmesh:
+                    v[i[0]] = 1
+                n = len(v)
+            
                 mat = target_obj.material_slots[0].name
-                cubes.append({'x': x, 'y': y, 'z': z, 'mat': mat})
-
-print(cubes)
+                cubes.append({'x': x, 'y': y, 'z': z, 'mat': mat , 'overlap': intersection_bmesh is not None , 'vCount': n })
+            
+            
+            mc_object.location.x = 0
+            mc_object.location.y = 0
+            mc_object.location.z = 0
 
 
 f = open(OUTPUTFILE_PATH, "w")
 f.write(json.dumps(cubes))
 f.close()
+

@@ -9,7 +9,7 @@
 * We then need to move to a python enviroment - I'm using VSCode etc.
 * Run the output-to-ahk.py script - this should generate output.ahk file.
 * Start Minecraft, position your guy where you want the Blender 0,0,0 to be. The scene will always be in MC's xyz orienatation.
-* Put MC into pause mode(esc)
+* Go into Creative Mode. Position you guy. and put MC into pause mode(esc)
 * launch the output.ahk script 
 
     ```powershell

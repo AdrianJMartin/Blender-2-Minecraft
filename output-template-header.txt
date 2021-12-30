@@ -1,7 +1,7 @@
 SetTitleMatchMode, RegEx
 WinActivate , ^Minecraft* 
 
-SetKeyDelay, 50
+SetKeyDelay, 100
 
 Send {Esc}
 

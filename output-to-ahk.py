@@ -25,19 +25,57 @@ header = open("output-template-header.txt", encoding="utf8")
 output.write(header.read())
 header.close()
 
-for b in data:
-    output.write("Send /\n")
-    output.write("Send fill ~%d ~%d ~%d ~%d ~%d ~%d %s\n" % (
-        b['x'] * -1, b['z'], b['y'],
-        b['x'] * -1, b['z'], b['y'],
-        b['mat']))
-    output.write("Send {Return}\n")
-    output.write("\n")
+beginStrip = True
+maxIndex = len(data) - 1
 
+i = -1
+
+newStrip = True
+
+while True:
+    i = i + 1
+
+    if i > len(data):
+        break
+
+    if newStrip:
+        b = data[i]
+        newStrip = False
+        x1 = b['x'] * -1
+        y1 = b['z']
+        z1 = b['y']
+        mat1 = b['mat']
+
+        output.write("Send /\n")
+        output.write("Clipboard := \"fill ~%d ~%d ~%d " % (x1, y1, z1))
+
+    if i < len(data) - 1:
+        b = data[i + 1]
+        x2 = b['x'] * -1
+        y2 = b['z']
+        z2 = b['y']
+        mat2 = b['mat']
+    else:
+        output.write("~%d ~%d ~%d %s\"\n" % (x, y, z, mat1))
+        output.write("Send ^v\n")
+        output.write("Send {Return}\n")
+        output.write("\n")
+        break
+
+    # are they in the same strip?
+    if y1 == y2 and z1 == z2:
+        x = x2
+        y = y2
+        z = z2
+        continue
+    else:
+        output.write("~%d ~%d ~%d %s\"\n" % (x, y, z, mat1))
+        output.write("Send ^v\n")
+        output.write("Send {Return}\n")
+        output.write("\n")
+        newStrip = True
 
 footer = open("output-template-footer.txt", encoding="utf8")
 output.write(footer.read())
 footer.close()
-
-
 output.close()

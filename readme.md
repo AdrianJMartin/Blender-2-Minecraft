@@ -18,9 +18,11 @@
 * 
 
 # Todo
-* Convert it to generate strips of blocks, this should be many times quicker.
+* DONE! Convert it to generate strips of blocks, this should be many times quicker.
 * Add a small offset to the coords to make sure that blocks are not created on the same space as the guy. As this will push the guy to another position and change the relative coords.
 * Profit?
+* Multiple objects in the Blender Scene
+* take range limits from scene
 
 
 

@@ -63,13 +63,14 @@ while True:
         break
 
     # are they in the same strip?
-    if y1 == y2 and z1 == z2:
+    if y1 == y2 and z1 == z2 and mat1 == mat2:
         x = x2
         y = y2
         z = z2
+        m = mat2
         continue
     else:
-        output.write("~%d ~%d ~%d %s\"\n" % (x, y, z, mat1))
+        output.write("~%d ~%d ~%d %s\"\n" % (x, y, z, mat2))
         output.write("Send ^v\n")
         output.write("Send {Return}\n")
         output.write("\n")

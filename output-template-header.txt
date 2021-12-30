@@ -1,0 +1,10 @@
+SetTitleMatchMode, RegEx
+WinActivate , ^Minecraft* 
+
+SetKeyDelay, 50
+
+Send {Esc}
+
+; x seems to be postive to the left -ve to the right
+; y up +ve
+; z forward +ve

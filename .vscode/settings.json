@@ -1,0 +1,16 @@
+{
+    "python.analysis.extraPaths": [
+        "D:/blender_autocomplete/3.0",
+        "C:/Program Files/Blender Foundation/Blender 3.0/3.0/scripts/modules"
+        
+    ],
+    "python.linting.pylintArgs": [
+        "--init-hook",
+        "import sys; sys.path.append('D:/blender_autocomplete/3.0')"
+    ],
+    "python.linting.pycodestyleEnabled": true,
+    "python.linting.enabled": true,
+    "python.linting.pycodestyleArgs": ["--ignore=E501"]
+
+    
+}

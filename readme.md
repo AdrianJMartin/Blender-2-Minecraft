@@ -6,7 +6,10 @@ Some how use talk/console and /fill maybe /clone - AutoHotKey or just use SendMs
 
 blender material name to block type
 
+# Python Enviroment Setup
+Sort of from here:
 
+https://b3d.interplanety.org/en/using-microsoft-visual-studio-code-as-external-ide-for-writing-blender-scripts-add-ons/
 
-
-
+# Dev Problems
+The Blender VSCode extension throws a EXCEPTION_ACCESS_VIOLATION when trying to update the view_layer.

@@ -1,6 +1,5 @@
 import bpy
 
-
 import bmesh
 from mathutils import *
 from mathutils.bvhtree import BVHTree
@@ -37,7 +36,7 @@ C = bpy.context
 objsToExport = []
 
 for o in D.objects:
-    if o.name.startswith("mc-cube") is False:
+    if o.name.startswith("mc-cube") is False and o.type == 'MESH':
         target_obj = D.objects[o.name]
         target_mesh = target_obj.data
 
@@ -62,9 +61,9 @@ for b in objsToExport:
                 # I think the first data block is the mesh - for mesh obj
                 mc_mesh = mc_object.data
 
-                mc_object.location.x = x 
-                mc_object.location.y = y 
-                mc_object.location.z = z 
+                mc_object.location.x = x
+                mc_object.location.y = y
+                mc_object.location.z = z
 
                 layer = bpy.context.view_layer
                 layer.update()

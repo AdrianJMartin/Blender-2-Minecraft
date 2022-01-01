@@ -13,8 +13,7 @@
 * Blender should output an itermediate output-data.json file
 * We then need to move to a python enviroment - I'm using VSCode etc.
 * Run the output-to-ahk.py script - this should generate output.ahk file.
-* Start Minecraft, position Steve where you want the Blender 0,0,0 to be. The scene will always be in MC's xyz orienatation.
-* Go into Creative Mode. Position Steve. and put MC into pause mode(esc)
+* Start Minecraft and go into a Creative mode world. Position Steve. and put MC into pause mode(esc), the building will always be in MC's xyz orienatation. DONT move Steve! it will upset the relative coords, Also make sure your Blender scene is not going to push Steve arround.
 * launch the output.ahk script 
 
     ```powershell
@@ -35,6 +34,8 @@
 ### 31 Dec 2021
 * I'm coming to the conclusion that I need to use a model of some sort to process the data rather than parsing a list of blocks
     * so...some kind of in memory model or simple DB...SQLLite.
+* If a mesh only has 8 vertices then we could assume its a cubiod and use block fill.
+   
 
 
 

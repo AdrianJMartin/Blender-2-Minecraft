@@ -1,4 +1,7 @@
 # Blender 2 Minecraft - ( via AHK )
+## WIP
+Moving to a blocking out style way of building....
+
 ## Pre Req
 * Minecraft - I used Java Edition - it might work with Bedrock...
 * Python 3.x - I've matched versions with the one used in the current version of Blender, Python 3.9.7
